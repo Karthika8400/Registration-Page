@@ -1,0 +1,11 @@
+.container
+{
+    padding: left 10px;
+    padding-top: 2px;
+    border:2px;
+}
+
+body{
+    background-color:grey;
+}
+

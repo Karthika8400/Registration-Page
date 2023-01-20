@@ -1,0 +1,156 @@
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" style="align-items: center;">
+    </head>
+    <body>
+    <br>
+      <h1 style="text-align:center;"> Patient Registration Form </h1>
+    <div class="container py-5" >
+          <div class="card shadow-2-strong card-registration" style="border-radius:25px;width:1250px;height:850px;">
+            <div class="card-body p-4 p-md-5" style="min-width: 100px;">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="text-align:center;color:blue;margin-left: 20px;"> Please fill out your details </h3>
+              <form #Registrationform="ngForm"(ngSubmit)="registerUser()">
+
+                <div class="row" style="text-align: center;">
+                  <div class="col-md-6 mb-4" >
+                    <small class="text-danger"  [class.d-none]="firstName.valid || firstName.untouched">FirstName is required field</small>
+                    <div class="form-outline"style="width:400px;"style="align-items:center">
+                      <mat-form-field  >
+                        <input matInput class="form-control form-control-lg" name="firstName" [(ngModel)]="user.firstName" required #firstName ="ngModel" pattern="[A-Za-z]{1,32}"
+                        [class.is-invalid]="firstName.invalid && firstName.touched" >                       
+                        <mat-label> First Name </mat-label>
+                        </mat-form-field>
+                    </div> 
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <small class="text-danger"  [class.d-none]="lastName.valid || lastName.untouched">LastName is required field</small>
+                    <div class="form-outline"style="width:570px;">
+                      <mat-form-field>
+                        <input matInput class="form-control form-control-lg" name="lastName" [(ngModel)]="user.lastName" required #lastName ="ngModel" pattern="[A-Za-z]{1,32}"
+                        [class.is-invalid]="lastName.invalid && lastName.touched" >
+                        <mat-label> Last Name </mat-label>
+                      </mat-form-field>
+                    </div>  
+                  </div>        
+                </div>
+                        
+                
+                <div class="row" style="text-align: center;" >
+                  <div class="col-md-6 mb-4 pb-2">
+                    <small class="text-danger"  [class.d-none]="email.valid || email.untouched" >Enter an valid Email</small>
+                    <div class="form-outline"style="width:580px;" style="align-items:center">
+                      <mat-form-field>
+                        <input matInput   class="form-control form-control-lg" name="email" [(ngModel)]="user.email" required #email ="ngModel"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                        [class.is-invalid]="email.invalid && email.touched" >
+                        <mat-label>Email</mat-label>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4 pb-2">
+                    <small class="text-danger"  [class.d-none]="cellPhone.valid || cellPhone.untouched">Enter an valid Cell Phone Number</small>
+                    <div class="form-outline"style="width:580px;">
+                      <mat-form-field>
+                        <input matInput  class="form-control form-control-lg" name="cellPhone" [(ngModel)]="user.cellPhone" required #cellPhone ="ngModel" pattern="[1-9]{1}[0-9]{9}"
+                        [class.is-invalid]="cellPhone.invalid && cellPhone.touched" >
+                        <mat-label>Cell Phone</mat-label>
+                      </mat-form-field>
+                    </div>    
+                  </div>                   
+                      
+                  <div class="row" style="text-align: center;">
+                    <div class="col-md-6 mb-4 pb-2">
+                      <small class="text-danger"  [class.d-none]="address.valid || address.untouched">Enter your address</small>
+                      <div class="form-outline"style="width:390px;" style="align-items:center">
+                        <mat-form-field>
+                          <input matInput  class="form-control form-control-lg" name="address" [(ngModel)]="user.address" required #address ="ngModel" 
+                          [class.is-invalid]="address.invalid && address.touched" >
+                          <mat-label>Address </mat-label>
+                        </mat-form-field>
+                      </div>
+                  </div>              
+                    
+                  <div class="col-md-6 mb-4 pb-2">
+                      <small class="text-danger"  [class.d-none]="city.valid || city.untouched">Enter your City</small>
+                      <div class="form-outline"style="width:600px;">                     
+                        <mat-form-field>
+                          <input matInput   class="form-control form-control-lg" name="city" [(ngModel)]="user.city" required #city ="ngModel" pattern="[A-Za-z]{1,32}"
+                          [class.is-invalid]="city.invalid && city.touched" >
+                          <mat-label>City </mat-label>
+                        </mat-form-field>                                         
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4 pb-2">
+                    <small class="text-danger"  [class.d-none]="zipCode.valid || zipCode.untouched">Enter your Zip Code</small>
+                      <div class="form-outline"style="width:580px;">       
+                        <mat-form-field>
+                          <input matInput  class="form-control form-control-lg" name="zipCode" [(ngModel)]="user.zipCode" required #zipCode ="ngModel"
+                          [class.is-invalid]="zipCode.invalid && zipCode.touched" >
+                          <mat-label>Zip Code </mat-label>
+                        </mat-form-field>                                         
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 mb-4 pb-2"> 
+                    <small class="text-danger" style="margin-left:210px;" [class.d-none]="dateOfBirth.valid || dateOfBirth.untouched">Date of Birth is required field</small>                   
+                      <input type="date" class="select form-control-lg" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" required #dateOfBirth ="ngModel" 
+                        [class.is-invalid]="dateOfBirth.invalid && dateOfBirth.touched" ><br>
+                        <label class="form-label select-label" style="margin-left:2px;"> Date of Birth </label>
+                    </div>          
+              </div>
+  
+              <div class="row" style="text-align: center;">
+                <small class="text-danger" style="text-align:left;margin-left:220px;" [class.d-none]="state.valid || state.untouched"> State is required field</small>
+                  <div class="col-md-6 mb-4"style="width:400px;" style="align-items:center">
+                    <select class="select form-control-lg" name="state" required [(ngModel)]="user.state" required #state="ngModel"
+                      [class.is-invalid]="state.invalid && state.touched">
+                     <option value="karnataka">Karnataka</option> 
+                     <option value="kerala">Kerala</option> 
+                     <option value="tamil nadu">Tamil Nadu</option> 
+                     <option value="andra">Andra</option>                    
+                    </select>
+                    <div>
+                      <label class="form-label select-label" >State</label>
+                    </div> 
+                 </div> 
+
+
+                <div class="col-md-6 mb-4"  style="align-items:left">
+                  <small class="text-danger" style="text-align:left;margin-right:10px; " [class.d-none]="gender.valid || gender.untouched"> Gender is required field</small> 
+                  <div style="width:500px;" style="align-items:center">  
+                    <select class="select form-control-lg" name="gender" required [(ngModel)]="user.gender" required #gender="ngModel"
+                      [class.is-invalid]="gender.invalid && gender.touched" >
+                      <option value="Male">Male</option>
+                      <option value="female">Female</option>                    
+                    </select>
+                    <div>
+                      <label  class="form-label select-label">Gender</label>
+                    </div> 
+                </div>
+                </div>
+                 
+
+                <div  style="text-align: center;">
+                  <div class="col-md-6 mb-4" >
+                  <mat-form-field >    
+                    <input matInput class="form-control form-control-lg" >  
+                    <mat-label> Comment </mat-label>  
+                  </mat-form-field> 
+                </div> 
+               </div>
+                              
+                 <h6 style="color:red; text-align:left;margin-left:180px;"> *Mandatory Fields</h6>
+                           
+                <div>
+                  <input class="btn btn-primary btn-lg" type="submit" value="Register" [disabled]="Registrationform.invalid" />
+                </div>
+              </div>
+              </div>
+            </form>  
+          </div>
+      </div>
+    </div>
+  </body>
+ 
