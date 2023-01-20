@@ -1,0 +1,192 @@
+body{
+  background-color: rgb(197, 224, 224);
+}
+
+/* Container styling */
+
+.container
+{
+  max-width: 1200px;
+  height:500%;
+  width:500%;
+  box-shadow: 0px 0px 10px 0px rgb(39, 34, 34);
+  padding: 20px 30px;
+  background-color: white;
+}
+.container input
+{
+  width:200px;
+  height: 25px;
+  border: 2px solid rgb(26, 25, 25);
+  display: inline;
+}
+
+/* Button styling */
+.container button 
+{
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.container #but
+{
+  border-radius: 2px ;
+}
+
+/* Field Label Styling */
+.container label
+{
+  padding-right: -100px;
+  line-height: 50px;
+  font-weight: bolder;
+}
+
+/* Feilds styling */
+.container .field1
+{
+ display:flex;
+ align-items: center;
+ justify-content:space-around;
+}
+.container .field2
+{
+ display: flex;
+ align-items: center;
+ padding-left: 200px;
+}
+.container .field2 #gendercss
+{
+ display: flex;
+ align-items: center;
+ padding-left: 400px;
+}
+.container .field3
+{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.container .field4
+{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+.container .field5
+{
+ display: flex;
+ align-items: center;
+ padding-left: 200px;
+}
+.container .field5 #statecss
+{
+  display: flex;
+ align-items: center;
+ padding-left: 400px;
+}
+.container .field6
+{
+ display: flex;
+ align-items: center;
+padding-left: 200px;
+}
+.container .field1 input{
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.container .field2 input{
+  padding-bottom: 10px;
+  padding-top: 30px;
+  border: none;
+}
+.container .field3 input{
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.container .field4 input{
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.container .field5 input{
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.container .field6 input{
+  padding-bottom: 15px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* styling of validation */
+.container .field1 .text-danger1
+{
+  position: absolute;
+  left: 540px;
+  top: 240px;
+}
+.container .field1 .text-danger2
+{
+  position: absolute;
+  left: 1140px;
+  top: 240px;
+}
+.container .field2 .text-danger3
+{
+  position: absolute;
+  left: 540px;
+  top: 340px;
+}
+.container .field2 .text-danger4
+{
+  position: absolute;
+  left: 1140px;
+  top: 320px;
+}
+.container .field3 .text-danger5
+{
+  position: absolute;
+  left: 540px;
+  top: 420px;
+}
+.container .field3 .text-danger6
+{
+  position: absolute;
+  left: 1140px;
+  top: 420px;
+}
+.container .field4 .text-danger7
+{
+  position: absolute;
+  left: 540px;
+  top: 500px;
+}
+.container .field4 .text-danger8
+{
+  position: absolute;
+  left: 1140px;
+  top: 500px;
+}
+.container .field5 .text-danger9
+{
+  position: absolute;
+  left: 1140px;
+  top: 600px;
+}
+.container .field5 .text-danger10
+{
+  position: absolute;
+  left: 540px;
+  top: 600px;
+  
+}
+
